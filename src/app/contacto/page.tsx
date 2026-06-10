@@ -6,7 +6,13 @@ import { ContactForm } from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contacto — SAER TI",
-  description: "Contáctanos para cotizar tu proyecto de software. Respondemos en menos de 48 horas.",
+  description: "Contáctanos para cotizar tu proyecto de software, sitio web, e-commerce o app. Respondemos en menos de 48 horas.",
+  alternates: { canonical: "/contacto" },
+  openGraph: {
+    title: "Contacto — SAER TI",
+    description: "Cotiza tu proyecto de software, sitio web, e-commerce o app con SAER TI.",
+    url: "/contacto",
+  },
 };
 
 export default function ContactoPage() {

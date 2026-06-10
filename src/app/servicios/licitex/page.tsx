@@ -13,11 +13,18 @@ import {
   TrendingUp,
   Calendar,
   Lock,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Licitex | Sistema de Gestión de Licitaciones Municipales y MOP — SAER TI",
   description: "Plataforma chilena para la gestión de licitaciones de obras municipales y del Ministerio de Obras Públicas. Agiliza postulaciones, seguimiento y adjudicaciones.",
+  alternates: { canonical: "/servicios/licitex" },
+  openGraph: {
+    title: "Licitex | Gestión de Licitaciones Municipales y MOP",
+    description: "Agiliza la búsqueda, postulación y seguimiento de licitaciones públicas en Chile desde una sola plataforma.",
+    url: "/servicios/licitex",
+  },
 };
 
 const FEATURES = [
@@ -126,6 +133,14 @@ export default function LicitexPage() {
                 >
                   Ver cómo funciona
                 </Link>
+                <a
+                  href="https://licitex.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white/70 font-medium hover:text-white transition-all duration-300"
+                >
+                  licitex.cl <ExternalLink className="h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -177,6 +192,46 @@ export default function LicitexPage() {
                 </div>
                 <h3 className="font-bold text-lg mb-3">{f.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SCREENSHOTS ─── */}
+      <section className="py-28 bg-[#F7F5F2]">
+        <div className="container px-6 mx-auto">
+          <div className="max-w-xl mb-16">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-10" style={{ background: "linear-gradient(90deg, #0F2044, #C4965A)" }} />
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#0F2044" }}>Plataforma</span>
+            </div>
+            <h2 className="text-5xl font-black tracking-tight leading-tight mb-5">Conoce Licitex<br />por dentro</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Itemizados y análisis de precios unitarios generados automáticamente para que prepares ofertas técnicas precisas en una fracción del tiempo.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {[
+              { src: "/screenshots/licitex-itemizado.png", w: 1453, h: 687, title: "Itemizado de Licitación" },
+              { src: "/screenshots/licitex-apu.png", w: 1583, h: 633, title: "Análisis de Precio Unitario (APU)" },
+            ].map((shot) => (
+              <div key={shot.src} className="group">
+                <div className="rounded-t-xl bg-[#1c2738] px-4 py-3 flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
+                </div>
+                <div className="relative w-full overflow-hidden rounded-b-xl border border-t-0 border-border shadow-soft-lg" style={{ aspectRatio: `${shot.w} / ${shot.h}` }}>
+                  <Image
+                    src={shot.src}
+                    alt={shot.title}
+                    fill
+                    className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+                <p className="mt-4 text-sm font-medium text-muted-foreground">{shot.title}</p>
               </div>
             ))}
           </div>

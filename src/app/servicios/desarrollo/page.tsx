@@ -9,11 +9,19 @@ import {
   RefreshCw,
   ArrowRight,
   CheckCircle2,
+  Globe,
+  ShoppingCart,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Desarrollo de Software a Medida — SAER TI",
-  description: "Desarrollamos software personalizado para empresas chilenas. Sistemas de gestión, automatizaciones, integraciones con ERP y soluciones para procesos únicos de tu negocio.",
+  title: "Desarrollo de Software a Medida, Sitios Web y E-commerce — SAER TI",
+  description: "Desarrollamos software personalizado, sitios web corporativos y tiendas online para empresas chilenas. Sistemas de gestión, automatizaciones, integraciones con ERP y soluciones para procesos únicos de tu negocio.",
+  alternates: { canonical: "/servicios/desarrollo" },
+  openGraph: {
+    title: "Desarrollo de Software a Medida, Sitios Web y E-commerce",
+    description: "Sitios web, tiendas online, sistemas de gestión, integraciones y automatizaciones a medida para empresas chilenas.",
+    url: "/servicios/desarrollo",
+  },
 };
 
 const PROCESS = [
@@ -28,6 +36,8 @@ const PROCESS = [
 const TECH = ["Next.js", "React", "Node.js", "Python", "PostgreSQL", "MySQL", "Docker", "AWS", "Supabase", "TypeScript"];
 
 const SOLUTIONS = [
+  { icon: Globe, title: "Sitios Web Corporativos", description: "Diseñamos y desarrollamos sitios web profesionales, rápidos y optimizados para SEO que representan tu marca." },
+  { icon: ShoppingCart, title: "Tiendas Online (E-commerce)", description: "Plataformas de venta online con pasarelas de pago, gestión de inventario y despacho integradas a tu operación." },
   { icon: Database, title: "Sistemas de Gestión (ERP/CRM)", description: "Software empresarial a medida para gestionar inventarios, clientes, ventas y procesos internos." },
   { icon: Layers, title: "Integraciones y APIs", description: "Conectamos tus sistemas existentes con nuevas plataformas, ERP, SII, bancos y servicios externos." },
   { icon: RefreshCw, title: "Automatización de Procesos", description: "Eliminamos tareas manuales y repetitivas mediante flujos automatizados y bots de gestión." },
@@ -123,11 +133,11 @@ export default function DesarrolloPage() {
               Desde sistemas de gestión hasta integraciones complejas, construimos la solución exacta que tu empresa necesita.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {SOLUTIONS.map((s) => (
               <div
                 key={s.title}
-                className="group p-10 rounded-2xl border border-border hover:border-primary/25 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 bg-white"
+                className="group p-8 rounded-2xl border border-border hover:border-primary/25 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 bg-white"
               >
                 <div
                   className="h-1 w-10 rounded-full mb-7"
@@ -170,7 +180,7 @@ export default function DesarrolloPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {PROCESS.map((p) => (
               <div key={p.step} className="p-7 rounded-2xl border border-white/15 backdrop-blur-sm bg-white/8 hover:bg-white/14 transition-all duration-300 group">
-                <div className="text-5xl font-black mb-4" style={{ color: "rgba(0,180,216,0.25)" }}>{p.step}</div>
+                <div className="text-5xl font-black mb-4" style={{ color: "rgba(196,150,90,0.25)" }}>{p.step}</div>
                 <h3 className="font-bold text-white text-lg mb-3 group-hover:text-[#C4965A] transition-colors">{p.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{p.description}</p>
               </div>

@@ -11,10 +11,52 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const SITE_URL = "https://saer.cl";
+const SITE_TITLE = "SAER TI | Soluciones Tecnológicas para la Industria Chilena";
+const SITE_DESCRIPTION =
+  "Empresa chilena de software especializada en FleetCore para minería y construcción, Licitex para licitaciones públicas, desarrollo de sitios web, e-commerce, software a medida y aplicaciones web y móviles.";
+
 export const metadata: Metadata = {
-  title: "SAER TI | Soluciones Tecnológicas para la Industria Chilena",
-  description: "Empresa chilena de software especializada en FleetCore para minería y construcción, Licitex para licitaciones públicas, desarrollo de software a medida y aplicaciones web y móviles.",
-  keywords: ["software chile", "fleetcore", "licitex", "desarrollo software", "minería", "construcción", "municipalidades", "MOP"],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s",
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "software chile",
+    "fleetcore",
+    "licitex",
+    "desarrollo de software a medida",
+    "desarrollo web chile",
+    "ecommerce chile",
+    "aplicaciones móviles",
+    "minería",
+    "construcción",
+    "municipalidades",
+    "licitaciones MOP",
+  ],
+  authors: [{ name: "SAER TI" }],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_CL",
+    url: SITE_URL,
+    siteName: "SAER TI",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

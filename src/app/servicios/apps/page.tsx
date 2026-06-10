@@ -12,11 +12,18 @@ import {
   CheckCircle2,
   Monitor,
   Tablet,
+  ShoppingCart,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Apps Web y Móviles — SAER TI",
-  description: "Desarrollamos aplicaciones web y móviles modernas para iOS y Android. Experiencias digitales de alta calidad para empresas chilenas.",
+  title: "Apps Web y Móviles, E-commerce y Landing Pages — SAER TI",
+  description: "Desarrollamos aplicaciones web y móviles modernas para iOS y Android, tiendas online y landing pages de alto impacto. Experiencias digitales de alta calidad para empresas chilenas.",
+  alternates: { canonical: "/servicios/apps" },
+  openGraph: {
+    title: "Apps Web y Móviles, E-commerce y Landing Pages",
+    description: "Apps web y móviles, tiendas online y landing pages de alto rendimiento para empresas chilenas.",
+    url: "/servicios/apps",
+  },
 };
 
 const APP_TYPES = [
@@ -43,6 +50,18 @@ const APP_TYPES = [
     title: "Apps para Tablets y Kioskos",
     description: "Soluciones táctiles para uso en terreno, puntos de venta, registros de entrada y paneles de control industrial.",
     tags: ["React Native", "PWA"],
+  },
+  {
+    icon: ShoppingCart,
+    title: "Tiendas Online (E-commerce)",
+    description: "Plataformas de venta online con carrito de compras, pasarelas de pago, gestión de stock y despacho integradas.",
+    tags: ["Next.js", "Webpay", "Stripe"],
+  },
+  {
+    icon: Layout,
+    title: "Landing Pages y Sitios Web",
+    description: "Sitios corporativos y landing pages de alto impacto, optimizados para conversión, velocidad y posicionamiento SEO.",
+    tags: ["Next.js", "SEO", "CMS"],
   },
 ];
 
@@ -142,11 +161,11 @@ export default function AppsPage() {
               Desde PWAs hasta apps nativas, cubrimos todos los tipos de experiencias digitales que tu negocio necesita.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {APP_TYPES.map((type) => (
               <div
                 key={type.title}
-                className="group p-10 rounded-2xl border border-border hover:border-primary/25 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 bg-white"
+                className="group p-8 rounded-2xl border border-border hover:border-primary/25 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 bg-white"
               >
                 <div
                   className="h-1 w-10 rounded-full mb-7"

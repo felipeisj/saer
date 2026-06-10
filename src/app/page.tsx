@@ -88,9 +88,29 @@ const BLOG_POSTS = [
 
 const INDUSTRIES = ["Minería", "Construcción", "Municipalidades", "MOP", "Servicios Públicos", "Empresas Privadas"];
 
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "SAER TI",
+  url: "https://saer.cl",
+  logo: "https://saer.cl/icon",
+  description:
+    "Empresa chilena de software especializada en FleetCore para minería y construcción, Licitex para licitaciones públicas, desarrollo de sitios web, e-commerce, software a medida y aplicaciones web y móviles.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Santiago",
+    addressCountry: "CL",
+  },
+  sameAs: ["https://fleetcore.cl", "https://licitex.cl"],
+};
+
 export default function Home() {
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+      />
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">

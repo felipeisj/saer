@@ -13,11 +13,18 @@ import {
   Shield,
   Clock,
   TrendingDown,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "FleetCore | Gestión de Flota para Minería y Construcción — SAER TI",
   description: "Plataforma de gestión de flota diseñada para empresas mineras y constructoras. Control GPS, mantenimiento predictivo y reportes de productividad en tiempo real.",
+  alternates: { canonical: "/servicios/fleetcore" },
+  openGraph: {
+    title: "FleetCore | Gestión de Flota para Minería y Construcción",
+    description: "Control GPS, mantenimiento predictivo y reportes de productividad en tiempo real para flotas mineras y de construcción.",
+    url: "/servicios/fleetcore",
+  },
 };
 
 const FEATURES = [
@@ -123,6 +130,14 @@ export default function FleetCorePage() {
                 >
                   Ver funcionalidades
                 </Link>
+                <a
+                  href="https://fleetcore.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white/70 font-medium hover:text-white transition-all duration-300"
+                >
+                  fleetcore.cl <ExternalLink className="h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -174,6 +189,46 @@ export default function FleetCorePage() {
                 </div>
                 <h3 className="font-bold text-lg mb-3">{f.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SCREENSHOTS ─── */}
+      <section className="py-28 bg-[#F7F5F2]">
+        <div className="container px-6 mx-auto">
+          <div className="max-w-xl mb-16">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-10" style={{ background: "linear-gradient(90deg, #0F2044, #C4965A)" }} />
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#0F2044" }}>Plataforma</span>
+            </div>
+            <h2 className="text-5xl font-black tracking-tight leading-tight mb-5">Conoce FleetCore<br />por dentro</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Módulos financieros y contables integrados para que la operación y las finanzas de tu flota hablen el mismo idioma.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {[
+              { src: "/screenshots/fleetcore-contabilidad-balance.png", w: 1622, h: 503, title: "Contabilidad — Balance de Comprobación de 8 Columnas" },
+              { src: "/screenshots/fleetcore-finanzas-costos-fijos.png", w: 1616, h: 780, title: "Finanzas — Módulo de Costos Fijos" },
+            ].map((shot) => (
+              <div key={shot.src} className="group">
+                <div className="rounded-t-xl bg-[#1c2738] px-4 py-3 flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
+                </div>
+                <div className="relative w-full overflow-hidden rounded-b-xl border border-t-0 border-border shadow-soft-lg" style={{ aspectRatio: `${shot.w} / ${shot.h}` }}>
+                  <Image
+                    src={shot.src}
+                    alt={shot.title}
+                    fill
+                    className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+                <p className="mt-4 text-sm font-medium text-muted-foreground">{shot.title}</p>
               </div>
             ))}
           </div>

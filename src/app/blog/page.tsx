@@ -6,7 +6,13 @@ import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog — SAER TI | Tecnología, Software e Industria Chilena",
-  description: "Artículos, guías y noticias sobre software industrial, licitaciones públicas, gestión de flota y tecnología para empresas chilenas.",
+  description: "Artículos, guías y noticias sobre software industrial, licitaciones públicas, gestión de flota, desarrollo web, e-commerce y tecnología para empresas chilenas.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog — SAER TI",
+    description: "Artículos sobre software industrial, licitaciones públicas, gestión de flota, desarrollo web y e-commerce en Chile.",
+    url: "/blog",
+  },
 };
 
 const POSTS = [
